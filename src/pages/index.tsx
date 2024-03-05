@@ -274,7 +274,7 @@ const Home = () => {
                   </p>
 
                   <a
-                    href="https://buy.stripe.com/test_28oeXU70j2R38HS288"
+                    href="https://cal.id/murtaza/counsultation"
                     title=""
                     className="
                                         relative
