@@ -263,7 +263,7 @@ const Home = () => {
               <div className="relative overflow-hidden bg-white border border-gray-200 rounded-2xl">
                 <div className="p-6 md:p-10">
                   <p className="text-lg font-bold text-gray-900 font-pj">
-                    Countulsation call
+                    Consultation call
                   </p>
                   <p className="mt-4 text-base font-normal leading-7 text-gray-600 font-pj">
                     Consultation available for you. Discover SkinScope services

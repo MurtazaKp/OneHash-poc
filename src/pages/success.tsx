@@ -21,7 +21,7 @@ const success = () => {
               Your payment is Confirmed
             </h2>
             <p className="mt-4 text-base font-normal leading-7 text-white sm:mt-6">
-              Please choose your timeslot as per your convience
+              Please choose your call duration as per your convience
             </p>
 
             <div className="mt-8 sm:mt-10">
