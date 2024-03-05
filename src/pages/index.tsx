@@ -229,7 +229,7 @@ const Home = () => {
                   FREE
                 </p>
                 <Link
-                  href="https://cal.id/murtaza/15min"
+                  href="https://cal.id/murtaza/Discovery"
                   className="
                                     inline-flex
                                     items-center
