@@ -18,20 +18,20 @@ const success = () => {
         <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-              Your payment is Confirmed
+              Your Booking is Successful
             </h2>
             <p className="mt-4 text-base font-normal leading-7 text-white sm:mt-6">
-              Please choose your call duration as per your convience
+              Please Check Your Email for more details
             </p>
 
             <div className="mt-8 sm:mt-10">
               <Link
-                href="https://cal.id/murtaza/counsultation"
+                href="/"
                 title=""
                 className="inline-flex items-center justify-center px-8 py-3 text-base font-bold leading-7 text-gray-900 transition-all duration-200 bg-white border border-transparent rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
                 role="button"
               >
-                Book Now
+                Go to Homepage
               </Link>
             </div>
           </div>
