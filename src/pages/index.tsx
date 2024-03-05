@@ -1,118 +1,359 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import Link from "next/link";
+import React, { useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+// import Pricing from "@/component/plans";
 
-export default function Home() {
+const Home = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <header
+        className="py-4 bg-white sm:py-5"
+        onClick={() => setExpanded(!expanded)}
+      >
+        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+          <div className="flex items-center justify-between">
+            <div className="shrink-0">
+              <a href="#" title="" className="">
+                <img
+                  className="w-auto h-8"
+                  src="https://landingfoliocom.imgix.net/store/collection/saasui/images/logo.svg"
+                  alt=""
+                />
+              </a>
+            </div>
+
+            <div className="hidden lg:flex lg:items-center lg:space-x-4 lg:ml-12">
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring-300"
+              >
+                Products
+              </a>
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring-300"
+              >
+                Features
+              </a>
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring-300"
+              >
+                Pricing
+              </a>
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-gray-900 transition-all duration-200 border border-transparent rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring-300"
+              >
+                Support
+              </a>
+            </div>
+
+            <div className="hidden sm:flex sm:items-center sm:justify-end sm:space-x-4 sm:ml-auto">
+              <a
+                href="#"
+                title=""
+                className="inline-flex items-center justify-center px-6 py-2.5 text-base font-medium text-gray-900 transition-all duration-200 border border-gray-900 rounded-full hover:bg-gray-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ring-900"
+                role="button"
+              >
+                Start free trial
+              </a>
+            </div>
+
+            <div className="flex ml-4 lg:hidden">
+              <button
+                type="button"
+                className="inline-flex items-center p-2.5 text-gray-900 duration-200 border border-gray-900 rounded-full hover:bg-gray-900 hover:text-white transiton-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 focus:bg-gray-900 focus:text-white"
+              >
+                <span
+                  style={{ display: !expanded ? "inline" : "none" }}
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </span>
+
+                <span
+                  style={{ display: expanded ? "inline" : "none" }}
+                  aria-hidden="true"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="py-12 overflow-hidden bg-white sm:py-16 lg:pb-20 xl:pb-48">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-16">
+            <div>
+              <h1 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl sm:tracking-tight">
+                Discover Your Skin True Potential with SkinScope
+              </h1>
+              <p className="mt-6 text-lg leading-7 text-gray-700 lg:leading-8 lg:text-xl">
+                Discover the potential of your skin with SkinScope Services. Our
+                advanced technology and personalized solutions help you achieve
+                glowing, healthy skin. Explore our tailored services and begin
+                your journey to beauty today.
+              </p>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+              <ul className="mt-10 space-y-4">
+                <li className="flex items-center">
+                  <svg
+                    className="w-6 h-6 mr-2 text-blue-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Personalized skincare recommendations tailored to your needs.
+                </li>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                <li className="flex items-center">
+                  <svg
+                    className="w-6 h-6 mr-2 text-blue-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Cutting-edge technology for accurate skin analysis and
+                  progress tracking.
+                </li>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+                <li className="flex items-center">
+                  <svg
+                    className="w-6 h-6 mr-2 text-blue-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  Expert guidance from skincare professionals throughout your
+                  journey.
+                </li>
+              </ul>
+            </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+            <div>
+              <div className="relative w-full max-w-sm mx-auto">
+                <div className="absolute inset-y-0 w-screen translate-y-20 left-1/2 bg-red-50 lg:left-32 lg:right-0"></div>
+
+                <img
+                  className="relative object-cover w-full max-w-xs mx-auto sm:max-w-sm rounded-2xl"
+                  src="/skincare.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-gray-50 sm:py-16 lg:py-20">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">
+              Choose your plan
+            </h2>
+            <p className="mt-5 text-lg font-normal text-gray-900 font-pj">
+              Premium UI Kit, affordable for everyone
+            </p>
+          </div>
+
+          <div className="grid max-w-7xl grid-cols-1 mx-auto mt-8 text-center sm:grid-cols-3 sm:mt-16 gap-y-5 gap-x-10">
+            <div className="overflow-hidden bg-white border border-gray-200 rounded-2xl">
+              <div className="p-6 md:p-10">
+                <p className="text-lg font-bold text-gray-900 font-pj">
+                  Book a Discovery Call
+                </p>
+                <p className="mt-4 text-base font-normal leading-7 text-gray-600 font-pj">
+                  Book a Free Discovery Call and Learn about all the SkinScope
+                  services today hurry
+                </p>
+                <p className="mt-8 text-xl font-bold text-gray-900 font-pj">
+                  FREE
+                </p>
+                <Link
+                  href="https://cal.id/murtaza/15min"
+                  className="
+                                    inline-flex
+                                    items-center
+                                    justify-center
+                                    px-8
+                                    py-3.5
+                                    mt-10
+                                    text-base
+                                    font-bold
+                                    text-gray-900
+                                    transition-all
+                                    duration-200
+                                    border-2 border-gray-400
+                                    rounded-xl
+                                    font-pj
+                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
+                                    hover:bg-gray-900
+                                    focus:bg-gray-900
+                                    hover:text-white
+                                    focus:text-white
+                                    hover:border-gray-900
+                                    focus:border-gray-900
+                                "
+                >
+                  Book Now
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative overflow-hidden bg-white border border-gray-200 rounded-2xl">
+                <div className="p-6 md:p-10">
+                  <p className="text-lg font-bold text-gray-900 font-pj">
+                    Countulsation call
+                  </p>
+                  <p className="mt-4 text-base font-normal leading-7 text-gray-600 font-pj">
+                    Consultation available for you. Discover SkinScope services
+                    today! book a paid call
+                  </p>
+                  <p className="mt-8 text-xl font-bold text-gray-900 font-pj">
+                    $100
+                  </p>
+
+                  <a
+                    href="https://buy.stripe.com/test_28oeXU70j2R38HS288"
+                    title=""
+                    className="
+                                        relative
+                                        inline-flex
+                                        items-center
+                                        justify-center
+                                        px-8
+                                        py-3.5
+                                        mt-10
+                                        text-base
+                                        font-bold
+                                        text-white
+                                        transition-all
+                                        duration-200
+                                        bg-gray-900
+                                        border border-transparent
+                                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
+                                        font-pj
+                                        hover:bg-opacity-90
+                                        rounded-xl
+                                    "
+                    role="button"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="overflow-hidden bg-white border border-gray-200 rounded-2xl">
+              <div className="p-6 md:p-10">
+                <p className="text-lg font-bold text-gray-900 font-pj">
+                  Custom call
+                </p>
+                <p className="mt-4 text-base font-normal leading-7 text-gray-600 font-pj">
+                  Looking for custom option Book a custom call now book
+                  according to your need
+                </p>
+                <p className="mt-8 text-xl font-bold text-gray-900 font-pj">
+                  -
+                </p>
+
+                <a
+                  href="#"
+                  title=""
+                  className="
+                                    inline-flex
+                                    items-center
+                                    justify-center
+                                    px-8
+                                    py-3.5
+                                    mt-10
+                                    text-base
+                                    font-bold
+                                    text-gray-900
+                                    transition-all
+                                    duration-200
+                                    border-2 border-gray-400
+                                    rounded-xl
+                                    font-pj
+                                    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
+                                    hover:bg-gray-900
+                                    focus:bg-gray-900
+                                    hover:text-white
+                                    focus:text-white
+                                    hover:border-gray-900
+                                    focus:border-gray-900
+                                "
+                  role="button"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default Home;
